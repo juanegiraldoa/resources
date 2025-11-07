@@ -19,7 +19,7 @@
 	},
 	"command": {
 		"commit": {
-			"description": "",
+			"description": "Commit changes on git",
 			"agent": "git",
 			"template": "Add to stage the files sended by the user $ARGUMENTS if the user don't specify any file do the action on all files and depending on the changes that have been made, it creates a commit message and executes the git commit command",
 		},
