@@ -1,26 +1,75 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
-  "agent": {
-    "git": {
-      "description": "Execute git commands",
-      "tools": {
-        "write": false,
-        "edit": false,
-      },
-      "prompt": "{file:./agents/git.md}",
-      "permission": {
-        "bash": "allow",
-        "edit": "deny",
-        "webfetch": "deny",
-      },
-    },
-  },
-  "command": {
-    "commit": {
-      "description": "",
-      "agent": "git",
-      "template": "Add to stage the files sended by the user $ARGUMENTS if the user don't specify any file do the action on all files and depending on the changes that have been made, it creates a commit message and executes the git commit command",
-    },
-  },
+	"$schema": "https://opencode.ai/config.json",
+	"username": "Juan",
+	"autoupdate": true,
+	"agent": {
+		"git": {
+			"description": "Execute git commands",
+			"tools": {
+				"write": false,
+				"edit": false,
+			},
+			"prompt": "{file:./agents/git.md}",
+			"permission": {
+				"bash": "allow",
+				"edit": "deny",
+				"webfetch": "deny",
+			},
+		},
+	},
+	"command": {
+		"commit": {
+			"description": "",
+			"agent": "git",
+			"template": "Add to stage the files sended by the user $ARGUMENTS if the user don't specify any file do the action on all files and depending on the changes that have been made, it creates a commit message and executes the git commit command",
+		},
+	},
+	"mcp": {
+		"cloudflare-docs": {
+			"type": "local",
+			"enabled": true,
+			"command": [
+				"npx",
+				"-y",
+				"mcp-remote",
+				"https://docs.mcp.cloudflare.com/sse",
+			],
+		},
+		"astro-docs": {
+			"type": "local",
+			"enabled": true,
+			"command": [
+				"npx",
+				"-y",
+				"mcp-remote",
+				"https://mcp.docs.astro.build/mcp",
+			],
+		},
+		"aws-docs": {
+			"type": "local",
+			"enabled": true,
+			"command": [
+				"npx",
+				"-y",
+				"mcp-remote",
+				"https://knowledge-mcp.global.api.aws",
+			],
+		},
+		"terraform-docs": {
+			"type": "local",
+			"enabled": true,
+			"command": [
+				"docker",
+				"run",
+				"-i",
+				"--rm",
+				"hashicorp/terraform-mcp-server",
+			],
+		},
+		"duckduckgo": {
+			"type": "local",
+			"enabled": true,
+			"command": ["docker", "run", "-i", "--rm", "mcp/duckduckgo"],
+		},
+	},
 }
