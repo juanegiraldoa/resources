@@ -4,6 +4,7 @@
 	"autoupdate": true,
 	"agent": {
 		"git": {
+			"mode": "subagent",
 			"description": "Execute git commands",
 			"tools": {
 				"write": false,
