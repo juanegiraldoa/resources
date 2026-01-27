@@ -3,6 +3,15 @@
 	"username": "Juan",
 	"autoupdate": true,
 	"model": "deepseek/deepseek-chat",
+	"formatter": {
+		"prettier": {
+			"command": ["pnpx", "prettier", "--write", "$FILE"],
+			"environment": {
+				"NODE_ENV": "development",
+			},
+			"extensions": [".js", ".ts", ".jsx", ".tsx", ".astro"],
+		},
+	},
 	"agent": {
 		"git": {
 			"mode": "subagent",
@@ -29,7 +38,7 @@
 	"mcp": {
 		"cloudflare-docs": {
 			"type": "local",
-			"enabled": true,
+			"enabled": false,
 			"command": [
 				"npx",
 				"-y",
@@ -37,19 +46,9 @@
 				"https://docs.mcp.cloudflare.com/sse",
 			],
 		},
-		"astro-docs": {
-			"type": "local",
-			"enabled": true,
-			"command": [
-				"npx",
-				"-y",
-				"mcp-remote",
-				"https://mcp.docs.astro.build/mcp",
-			],
-		},
 		"aws-docs": {
 			"type": "local",
-			"enabled": true,
+			"enabled": false,
 			"command": [
 				"npx",
 				"-y",
@@ -57,9 +56,19 @@
 				"https://knowledge-mcp.global.api.aws",
 			],
 		},
+		"astro-docs": {
+			"type": "local",
+			"enabled": false,
+			"command": [
+				"npx",
+				"-y",
+				"mcp-remote",
+				"https://mcp.docs.astro.build/mcp",
+			],
+		},
 		"terraform-docs": {
 			"type": "local",
-			"enabled": true,
+			"enabled": false,
 			"command": [
 				"docker",
 				"run",
@@ -68,10 +77,15 @@
 				"hashicorp/terraform-mcp-server",
 			],
 		},
-		"duckduckgo": {
+		"daisyui-blueprint": {
 			"type": "local",
-			"enabled": true,
-			"command": ["docker", "run", "-i", "--rm", "mcp/duckduckgo"],
+			"enabled": false,
+			"command": [
+				"npx",
+				"-y",
+				"mcp-remote",
+				"https://gitmcp.io/saadeghi/daisyui",
+			],
 		},
 	},
 }

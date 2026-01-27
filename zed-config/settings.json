@@ -1,86 +1,10 @@
 {
 	"base_keymap": "Atom",
-	"context_servers": {
-		"astro-docs": {
-			"source": "custom",
-			"enabled": true,
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://mcp.docs.astro.build/mcp"],
-			"env": {}
-		},
-		"cloudflare-docs": {
-			"source": "custom",
-			"enabled": true,
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://docs.mcp.cloudflare.com/sse"]
-		},
-		"aws-docs": {
-			"source": "custom",
-			"enabled": true,
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://knowledge-mcp.global.api.aws"]
-		},
-		"terraform-docs": {
-			"source": "custom",
-			"enabled": true,
-			"command": "docker",
-			"args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
-		},
-		"duckduckgo-search": {
-			"source": "custom",
-			"enabled": true,
-			"command": "docker",
-			"args": ["run", "-i", "--rm", "mcp/duckduckgo"]
-		}
-	},
-	"agent": {
-		"always_allow_tool_actions": true,
-		"default_profile": "ask",
-		"default_model": {
-			"provider": "deepseek",
-			"model": "deepseek-chat"
-		}
-	},
-	"language_models": {
-		"openai_compatible": {
-			"Qwen": {
-				"api_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
-				"available_models": [
-					{
-						"name": "qwen3-coder-flash",
-						"display_name": "qwen3-coder-flash",
-						"max_tokens": 200000,
-						"max_output_tokens": 32000,
-						"max_completion_tokens": 200000,
-						"capabilities": {
-							"tools": true,
-							"images": false,
-							"parallel_tool_calls": false,
-							"prompt_cache_key": true
-						}
-					},
-					{
-						"name": "qwen3-coder-plus",
-						"display_name": "qwen3-coder-plus",
-						"max_tokens": 200000,
-						"max_output_tokens": 32000,
-						"max_completion_tokens": 200000,
-						"capabilities": {
-							"tools": true,
-							"images": false,
-							"parallel_tool_calls": false,
-							"prompt_cache_key": true
-						}
-					}
-				]
-			}
-		}
-	},
 	"features": {
 		"edit_prediction_provider": "none"
 	},
-	"ui_font_size": 16,
-	"buffer_font_size": 16,
+	"ui_font_size": 14,
+	"buffer_font_size": 14,
 	"theme": {
 		"mode": "system",
 		"light": "One Light",
@@ -88,7 +12,6 @@
 	},
 	"hard_tabs": true,
 	"format_on_save": "on",
-	"disable_ai": false,
 	"tab_size": 2,
 	"languages": {
 		"Java": {
@@ -112,8 +35,14 @@
 		},
 		"Python": {
 			"formatter": "language_server",
+			"tab_size": 4,
+			"hard_tabs": false
+		},
+		"C++": {
 			"format_on_save": "on",
-			"tab_size": 4
+			"formatter": "language_server",
+			"enable_language_server": true,
+			"auto_indent_on_paste": true
 		}
 	}
 }
