@@ -13,6 +13,7 @@
 	"hard_tabs": true,
 	"format_on_save": "on",
 	"tab_size": 2,
+	"auto_indent_on_paste": true,
 	"languages": {
 		"Java": {
 			"format_on_save": "off",
@@ -41,8 +42,7 @@
 		"C++": {
 			"format_on_save": "on",
 			"formatter": "language_server",
-			"enable_language_server": true,
-			"auto_indent_on_paste": true
+			"enable_language_server": true
 		}
 	}
 }
