@@ -1,0 +1,16 @@
+{
+	"Default component": {
+		"prefix": "default-component",
+		"body": [
+			"export interface ${1}Props {",
+			"}\n",
+			"export default function ${1}({...rest}: ${1}Props) {",
+			"\treturn <>${0}</>;",
+			"}"
+		]
+	},
+	"Component": {
+		"prefix": "component",
+		"body": ["export function ${1}() {", "\treturn <>${0}</>;", "}"]
+	}
+}
