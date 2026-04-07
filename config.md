@@ -3,7 +3,7 @@
 1. Open `sddm.conf` with nano
 
 ```bash
->$ sudo nano /etc/sddm.conf
+sudo nano /etc/sddm.conf
 ```
 
 2. Add config for Autologin
