@@ -1,4 +1,6 @@
 ---
+# Based on the skill:
+# pnpx skills add https://github.com/affaan-m/everything-claude-code --skill java-coding-standards
 name: java-coding-standar
 description: "Java coding standards"
 ---
